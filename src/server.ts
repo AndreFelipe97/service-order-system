@@ -1,20 +1,23 @@
-import AdminJS from 'adminjs'
-import AdminJSExpress from '@adminjs/express'
-import express from 'express'
+import AdminJS from 'adminjs';
+import AdminJSExpress from '@adminjs/express';
+import express from 'express';
+require('dotenv').config();
 
-const PORT = 3000
+const PORT = process.env.PORT_HOST;
 
 const start = async () => {
-  const app = express()
+  const app = express();
 
-  const admin = new AdminJS({})
+  const admin = new AdminJS({});
 
-  const adminRouter = AdminJSExpress.buildRouter(admin)
-  app.use(admin.options.rootPath, adminRouter)
+  const adminRouter = AdminJSExpress.buildRouter(admin);
+  app.use(admin.options.rootPath, adminRouter);
 
   app.listen(PORT, () => {
-    console.log(`AdminJS started on http://localhost:${PORT}${admin.options.rootPath}`)
-  })
-}
+    console.log(
+      `AdminJS started on http://${process.env.HOST}:${PORT}${admin.options.rootPath}`,
+    );
+  });
+};
 
-start()
+start();
