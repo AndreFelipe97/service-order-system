@@ -45,15 +45,15 @@ User.init(
     },
     serviceProvider: {
       type: new DataTypes.BOOLEAN(),
-      allowNull: false,
+      allowNull: true,
     },
     createdAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },
     updatedAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },

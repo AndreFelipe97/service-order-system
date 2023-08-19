@@ -34,26 +34,26 @@ Assessment.init(
       primaryKey: true,
     },
     orderId: {
-      type: DataTypes.INTEGER,
+      type: new DataTypes.INTEGER(),
       allowNull: false,
       references: {
-        model: 'order',
+        model: 'orders',
         key: 'id',
       },
     },
     serviceProvider: {
-      type: DataTypes.INTEGER,
+      type: new DataTypes.INTEGER(),
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id',
       },
     },
     client: {
-      type: DataTypes.INTEGER,
+      type: new DataTypes.INTEGER(),
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id',
       },
     },
@@ -63,12 +63,12 @@ Assessment.init(
       unique: true,
     },
     createdAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },
     updatedAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },

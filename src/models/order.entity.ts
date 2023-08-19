@@ -43,31 +43,31 @@ Order.init(
     },
     status: {
       type: new DataTypes.BOOLEAN(),
-      allowNull: false,
+      allowNull: true,
     },
     serviceProvider: {
-      type: DataTypes.INTEGER,
+      type: new DataTypes.INTEGER(),
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id',
       },
     },
     client: {
-      type: DataTypes.INTEGER,
+      type: new DataTypes.INTEGER(),
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id',
       },
     },
     createdAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },
     updatedAt: {
-      type: DataTypes.DATE,
+      type: new DataTypes.DATE(),
       allowNull: false,
       defaultValue: new Date(),
     },
